@@ -1,0 +1,115 @@
+{
+  "_note": "ASSUMPTION: API.md was not available when this was written. Field names below (id, name, category, purpose, explanation, eligibility, documents, steps, officialSource) are a best guess at a scheme lookup API. Once you have the real API.md, update field names here AND in src/app.js's normalizeScheme() function — that is the only place field names are read from, so the rest of the app does not need to change.",
+  "schemes": [
+    {
+      "id": "sc-001",
+      "name": "National Scholarship for Higher Education",
+      "category": "Education",
+      "purpose": "Financial support for tuition and hostel fees for students from low-income families.",
+      "explanation": "This scheme pays part of your college fees directly to your institution if your family's income is below the limit and you are enrolled in a recognised course. You apply once a year and renew each year you stay enrolled.",
+      "eligibility": [
+        "Family annual income below ₹2,50,000",
+        "Enrolled in a recognised college or university",
+        "Indian citizen",
+        "Not already receiving another central scholarship for the same course"
+      ],
+      "documents": [
+        "Aadhaar card",
+        "Income certificate",
+        "Latest marksheet",
+        "Bank passbook (for direct transfer)",
+        "College admission/enrollment proof"
+      ],
+      "steps": [
+        "Create an account on the National Scholarship Portal",
+        "Fill in personal and academic details",
+        "Upload the required documents",
+        "Submit the form before the deadline",
+        "Track status on the portal using your application ID"
+      ],
+      "officialSource": "https://scholarships.gov.in"
+    },
+    {
+      "id": "sc-002",
+      "name": "Disability Support Pension",
+      "category": "Disability",
+      "purpose": "Monthly financial assistance for persons with 40% or more certified disability.",
+      "explanation": "A fixed monthly amount is paid into your bank account if you hold a valid disability certificate showing 40% or more disability. Payments continue as long as your certificate stays valid.",
+      "eligibility": [
+        "Disability certificate showing 40% or more disability",
+        "Age 18 years or above",
+        "Family income below the state-specified limit",
+        "Resident of the state for at least 3 years"
+      ],
+      "documents": [
+        "Disability certificate (UDID card if available)",
+        "Aadhaar card",
+        "Residence proof",
+        "Bank account details",
+        "Passport-size photograph"
+      ],
+      "steps": [
+        "Visit the nearest social welfare office or apply online",
+        "Fill in the pension application form",
+        "Attach the disability certificate and other documents",
+        "Submit for verification",
+        "Pension begins after approval, usually within 60 days"
+      ],
+      "officialSource": "https://disabilityaffairs.gov.in"
+    },
+    {
+      "id": "sc-003",
+      "name": "Senior Citizen Health Insurance",
+      "category": "Senior Citizens",
+      "purpose": "Free or low-cost health coverage for citizens aged 60 and above.",
+      "explanation": "This scheme covers hospital treatment costs up to a yearly limit for senior citizens, including pre-existing conditions after a short waiting period. Enrollment is done once and renewed yearly.",
+      "eligibility": [
+        "Age 60 years or above",
+        "Indian citizen",
+        "Not covered under another government health scheme",
+        "Valid identity proof"
+      ],
+      "documents": [
+        "Aadhaar card",
+        "Age proof",
+        "Passport-size photograph",
+        "Existing medical records, if any"
+      ],
+      "steps": [
+        "Visit the nearest empanelled hospital or Common Service Centre",
+        "Fill in the enrollment form",
+        "Submit identity and age proof",
+        "Receive your health card by post or SMS link",
+        "Show the card at any empanelled hospital for cashless treatment"
+      ],
+      "officialSource": "https://pmjay.gov.in"
+    },
+    {
+      "id": "sc-004",
+      "name": "Working Women Hostel Assistance",
+      "category": "Women",
+      "purpose": "Subsidised hostel accommodation for working women and trainees in cities away from home.",
+      "explanation": "This scheme provides safe, low-cost hostel accommodation for women working or training away from their hometown, including a daycare facility where available.",
+      "eligibility": [
+        "Working woman or woman under vocational training",
+        "Annual income below the state-specified limit",
+        "Living away from her home district for work",
+        "Age 18 to 55 years"
+      ],
+      "documents": [
+        "Aadhaar card",
+        "Employment or training proof",
+        "Income certificate",
+        "Passport-size photograph"
+      ],
+      "steps": [
+        "Locate a scheme-registered hostel in your city",
+        "Fill in the hostel admission form",
+        "Submit employment and income proof",
+        "Pay the subsidised monthly fee after approval",
+        "Renew documents annually"
+      ],
+      "officialSource": "https://wcd.gov.in"
+    }
+  ]
+}

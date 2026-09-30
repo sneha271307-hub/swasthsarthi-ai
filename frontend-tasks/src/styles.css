@@ -1,0 +1,352 @@
+/* ---- Design tokens (B1) ---- */
+:root {
+  --navy: #0B2545;
+  --teal: #0F8B8D;
+  --blue: #2E86FF;
+
+  --bg: #F7F9FB;
+  --surface: #FFFFFF;
+  --text: #1A1F27;
+  --muted: #5B6472;
+  --border: #DDE3EA;
+  --radius: 12px;
+  --focus: 3px solid var(--blue);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, "Noto Sans Devanagari", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#app {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--bg);
+  padding-bottom: 24px;
+}
+
+/* ---- Focus visibility (B10) ---- */
+a, button, input, select, [tabindex] {
+  font: inherit;
+}
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, [tabindex]:focus-visible {
+  outline: var(--focus);
+  outline-offset: 2px;
+}
+
+/* ---- Header ---- */
+.app-header {
+  background: var(--navy);
+  color: #fff;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.app-header h1 {
+  font-size: 18px;
+  margin: 0;
+}
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+.icon-btn {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  min-width: 44px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+main { padding: 16px; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---- Search + mic (B2) ---- */
+.search-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.search-row input[type="search"] {
+  flex: 1;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+}
+.mic-btn {
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: var(--teal);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+.mic-btn[aria-pressed="true"] {
+  background: var(--blue);
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(46,134,255,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(46,134,255,0); }
+}
+
+/* ---- Category chips (B2) ---- */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.chip {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 8px 14px;
+  min-height: 44px;
+  cursor: pointer;
+  color: var(--text);
+}
+.chip[aria-pressed="true"] {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+
+/* ---- Result cards (B3) ---- */
+.result-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.result-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  cursor: pointer;
+}
+.result-card h3 {
+  margin: 0 0 4px;
+  font-size: 17px;
+  color: var(--navy);
+}
+.result-card .category-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--teal);
+  background: rgba(15,139,141,0.1);
+  border-radius: 999px;
+  padding: 2px 10px;
+  margin-bottom: 6px;
+}
+.result-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14.5px;
+}
+.empty-state {
+  color: var(--muted);
+  text-align: center;
+  padding: 40px 16px;
+}
+
+/* ---- Details screen (B4) ---- */
+.back-link {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--blue);
+  background: none;
+  border: none;
+  padding: 8px 0;
+  cursor: pointer;
+  min-height: 44px;
+}
+.details-card h2 {
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 20px 0 8px;
+}
+.eligibility-list, .steps-list {
+  padding-left: 20px;
+  margin: 0;
+}
+.eligibility-list li, .steps-list li {
+  margin-bottom: 6px;
+}
+.doc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.doc-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.doc-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+.disclaimer {
+  margin-top: 20px;
+  padding: 12px 14px;
+  background: rgba(46,134,255,0.08);
+  border-left: 4px solid var(--blue);
+  border-radius: 6px;
+  font-size: 14.5px;
+  color: var(--text);
+}
+.listen-btn {
+  margin-top: 16px;
+  background: var(--teal);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+/* ---- Steps / handoff screen (B5) ---- */
+.official-btn {
+  display: inline-block;
+  margin-top: 16px;
+  background: var(--navy);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  min-height: 44px;
+  font-weight: 600;
+}
+.helper-link {
+  display: block;
+  margin-top: 14px;
+  color: var(--blue);
+  font-weight: 600;
+}
+
+/* ---- Accessibility panel (B7) ---- */
+.a11y-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+.a11y-panel h2 {
+  font-size: 15px;
+  margin: 0 0 10px;
+}
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+.toggle-row label { cursor: pointer; }
+.switch {
+  position: relative;
+  width: 44px;
+  height: 26px;
+  flex: none;
+}
+.switch input { opacity: 0; width: 0; height: 0; }
+.switch .track {
+  position: absolute;
+  inset: 0;
+  background: var(--border);
+  border-radius: 999px;
+  transition: background 0.15s;
+}
+.switch .track::before {
+  content: "";
+  position: absolute;
+  width: 20px; height: 20px;
+  left: 3px; top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.15s;
+}
+.switch input:checked + .track { background: var(--teal); }
+.switch input:checked + .track::before { transform: translateX(18px); }
+.switch input:focus-visible + .track { outline: var(--focus); outline-offset: 2px; }
+
+/* ---- Language switcher (B9) ---- */
+.lang-select {
+  min-height: 44px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  padding: 0 8px;
+}
+.lang-select option { color: #000; }
+
+/* ---- Accessibility mode classes (B7) ---- */
+body.large-text { font-size: 19px; }
+body.large-text .result-card h3 { font-size: 20px; }
+body.high-contrast {
+  --bg: #000000;
+  --surface: #000000;
+  --text: #FFFFFF;
+  --muted: #E0E0E0;
+  --border: #FFFFFF;
+  --navy: #7FB2FF;
+  --teal: #4DE0D6;
+  --blue: #7FB2FF;
+}
+body.high-contrast .app-header { background: #000; border-bottom: 2px solid #fff; }
+body.high-contrast .icon-btn { border-color: #fff; }
+body.reduced-motion, body.reduced-motion * {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* ---- Responsive: phone-first, tested ~375px, then wider (B11) ---- */
+@media (min-width: 640px) {
+  #app { max-width: 720px; }
+  .chip-row { gap: 10px; }
+}
+@media (min-width: 1024px) {
+  #app { max-width: 900px; }
+}
