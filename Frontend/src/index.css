@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-surface text-on-surface font-sans text-body-md antialiased; margin: 0; }
+  ::-webkit-scrollbar { display: none; }
+  a, button { -webkit-tap-highlight-color: transparent; }
+  /* keep icons icon-sized even before the icon font has loaded */
+  .material-symbols-outlined { display: inline-block; width: 1em; height: 1em; overflow: hidden; white-space: nowrap; flex-shrink: 0; line-height: 1; vertical-align: middle; }
+}
+
+/* "Silk" neomorphic system - every surface shares one color; depth comes from shadow only */
+@layer components {
+  .neu-raised { @apply bg-surface rounded-xl; box-shadow: 6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.6); }
+  .neu-raised-sm { @apply bg-surface rounded-xl; box-shadow: 3px 3px 6px rgba(0,0,0,0.08), -3px -3px 6px rgba(255,255,255,0.6); }
+  .neu-inset { @apply bg-surface rounded-xl; box-shadow: inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5); }
+
+  .neu-btn {
+    @apply neu-raised inline-flex items-center justify-center gap-2.5 px-8 py-4 text-label-md text-primary
+           transition-shadow duration-150 select-none cursor-pointer;
+  }
+  .neu-btn:active, .neu-btn.is-active { box-shadow: inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5); }
+  .neu-btn-sm { @apply px-5 py-2.5 text-label-sm; }
+  .neu-btn-ghost { @apply text-on-surface-variant; }
+
+  .neu-chip {
+    @apply neu-raised-sm rounded-full px-4 py-2 text-caption text-on-surface cursor-pointer inline-flex items-center gap-1 transition-shadow;
+  }
+  .neu-chip.is-active { @apply text-primary; box-shadow: inset 3px 3px 6px rgba(0,0,0,0.06), inset -3px -3px 6px rgba(255,255,255,0.5); }
+
+  .neu-input {
+    @apply neu-inset w-full px-5 py-4 text-body-sm text-on-surface placeholder:text-outline border-0 outline-none
+           focus:ring-2 focus:ring-primary/60 appearance-none;
+  }
+  .neu-toggle-track { @apply neu-inset rounded-full; }
+  .section-pad { @apply px-6 lg:px-12 py-20 lg:py-32; }
+  .eyebrow { @apply text-secondary text-label-sm uppercase tracking-wider; }
+}
+
+@media print {
+  header, footer, .no-print { display: none !important; }
+  main { padding-top: 0 !important; }
+}
