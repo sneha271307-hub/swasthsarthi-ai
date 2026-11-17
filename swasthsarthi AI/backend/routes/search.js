@@ -61,10 +61,7 @@ router.get("/", async (req, res) => {
           ? "No matching schemes found"
           : "Matching schemes found",
     });
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
   } catch (error) {
     console.error("Search failed:", error);
 
